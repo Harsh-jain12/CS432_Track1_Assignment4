@@ -1,4 +1,4 @@
-# Assignment 4 — Sharding of the Dispensary Management System
+# Assignment 4: Sharding of the Dispensary Management System
 
 ## CS 432 Databases · Track 1 · Team SQL_ed
 
