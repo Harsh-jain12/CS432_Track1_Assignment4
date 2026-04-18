@@ -42,7 +42,7 @@ routes every query to the correct shard based on a **shard key** (`MemberID`).
 - Shard 1: http://10.0.116.184:8081
 - Shard 2: http://10.0.116.184:8082
 
-⚠️ **Network requirement:** The shard servers are accessible only from the IITGN network.
+**Network requirement:** The shard servers are accessible only from the IITGN network.
 You must be on campus or VPN to reach them.
 
 ---
