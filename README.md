@@ -79,14 +79,14 @@ node sql/02_migrate_data.js
 
 Expected output:
 ```
-  ✅ Connected to source: localhost:3306/DispensaryManagement
-  ✅ Shard 0 (port 3307): <hostname>:3307
-  ✅ Shard 1 (port 3308): <hostname>:3308
-  ✅ Shard 2 (port 3309): <hostname>:3309
+[PASS] Connected to source: localhost:3306/DispensaryManagement
+[PASS] Shard 0 (port 3307): <hostname>:3307
+[PASS] Shard 1 (port 3308): <hostname>:3308
+[PASS] Shard 2 (port 3309): <hostname>:3309
   ...
-  Member             |    260 |   87 |   87 |   86 |   260 | ✅
-  Appointment        |    530 |  177 |  177 |  176 |   530 | ✅
-  ✅ MIGRATION COMPLETE — all sharded data accounted for
+  Member             |    260 |   87 |   87 |   86 |   260 | [PASS]
+  Appointment        |    530 |  177 |  177 |  176 |   530 | [PASS]
+  [PASS] MIGRATION COMPLETE — all sharded data accounted for
 ```
 
 ### Step 3: Start the sharded application server
@@ -110,9 +110,9 @@ cd <your-app> && node server_sharded.js
 You should see:
 ```
   Testing connectivity to all 3 shards...
-  ✅ Shard 0 (port 3307): <hostname>:3307
-  ✅ Shard 1 (port 3308): <hostname>:3308
-  ✅ Shard 2 (port 3309): <hostname>:3309
+  [PASS] Shard 0 (port 3307): <hostname>:3307
+  [PASS] Shard 1 (port 3308): <hostname>:3308
+  [PASS] Shard 2 (port 3309): <hostname>:3309
   Server running on http://localhost:3000
 ```
 
