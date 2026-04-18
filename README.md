@@ -5,6 +5,8 @@
 Horizontal data partitioning across **3 distinct MySQL shard servers** running on
 ports 3307, 3308, and 3309 of the IITGN-provided shard host.
 
+## Video Link : https://drive.google.com/drive/folders/16LBndKv99nr28VuTpxa6RlGkc-hHJj1x
+
 ---
 
 ## Table of Contents
