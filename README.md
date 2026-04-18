@@ -180,21 +180,17 @@ every shard needs for joins (e.g., doctor info when listing appointments).
 
 ## Implementation Details
 
-### How the Old Approach Differed
+The assignments requirements were to do this on **3 physically distinct MySQL servers**, this implementation was designed:
 
-The previous version of this assignment used **table-prefixing within a single database**
-(e.g., `shard_0_Member`, `shard_1_Member`). When the assignment requirements were updated
-to require **3 physically distinct MySQL servers**, the implementation was redesigned:
+| New (multi-server) |
+|---|
+| 3 separate pools, one per shard server |
+| Plain `Member` table on every shard |
+| `getShardPool(id)` returns connection pool |
+| Different connection, same table |
 
-| Old (table-prefix) | New (multi-server) |
-|---|---|
-| Single MySQL connection pool | 3 separate pools, one per shard server |
-| `shard_0_Member`, `shard_1_Member`, `shard_2_Member` | Plain `Member` table on every shard |
-| `getShardTable(base, id)` returns table name | `getShardPool(id)` returns connection pool |
-| Same connection, different table | Different connection, same table |
-
-The conceptual model is the same — hash the MemberID, route to the right destination —
-but the destination is now a **different physical server** instead of a different table
+The conceptual model is hash the MemberID, route to the right destination
+but the destination is a **different physical server** instead of a different table
 on the same server.
 
 ### Connection Pools (`shardPools.js`)
